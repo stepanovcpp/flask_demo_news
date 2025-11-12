@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <span class="fs-4">Demo News</span>
+            </a>
+            <ul class="nav nav-pills">
+                <li class="nav-item"><a href="/" class="nav-link">News</a></li>
+                <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+                {% if 'logged_in' in session %}
+                    <li class="nav-item"><a href="/create_post" class="nav-link">Create post</a></li>
+                    <li class="nav-item"><a href="/profile" class="nav-link">Profile</a></li>
+                    <li class="nav-item"><a href="/logout" class="nav-link">Log out</a></li>
+                {% else %}
+                    <li class="nav-item"><a href="/login" class="nav-link">Log in</a></li>
+                {% endif %}
+            </ul>
+        </header>
+    </div>
+
+    <div class="container mt-5 flex-grow-1">{% block content %}{% endblock %}</div>
+
+    <div class="container">
+        <footer class="py-3 my-4 mt-auto">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="/" class="nav-link px-2 text-body-secondary">News</a></li>
+                <li class="nav-item"><a href="/about" class="nav-link px-2 text-body-secondary">About</a></li>
+            </ul>
+            <p class="text-center text-body-secondary">© 2025 Demo News</p>
+        </footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ article.title }}
+{% endblock %}
+
+{% block content %}
+
+
+<article class="card my-4 shadow-sm">
+
+    <header class="card-header bg-light">
+        <h1 class="h3 mb-0">{{ article.title }}</h1>
+    </header>
+
+    {% if article.image %}
+        <figure class="mb-0">
+            <img
+                src="{{ url_for('static', filename='img/uploads/' + article.image) }}"
+                alt="{{ article.title }}"
+                class="img-fluid w-100"
+                style="height: auto; object-fit: cover;"
+            >
+        </figure>
+    {% endif %}
+
+    <div class="card-body">
+        <div class="article-body mb-4">
+            <p class="card-text">{{ article.content | safe }}</p>
+        </div>
+
+        <footer class="d-flex justify-content-between align-items-center text-muted border-top pt-3">
+            <small>
+                <div class="mb-1 text-body-secondary">{{ users[article.user_id].full_name }} - {{ article.date_created.date() }}</div>
+                {% if article.user_id == session.user_id %}
+                <div class="d-flex gap-2 mt-2">
+
+                    <a href="/delete_post/{{ article.id }}" class="btn btn-danger btn-sm">
+                        Delete
+                    </a>
+
+                    <a href="/update_post/{{ article.id }}" class="btn btn-success btn-sm">
+                        Update
+                    </a>
+
+                </div>
+                {% endif %}
+            </small>
+        </footer>
+    </div>
+
+</article>
+
+
+{% endblock %}

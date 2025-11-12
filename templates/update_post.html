@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+update {{ article.title }}
+{% endblock %}
+
+{% block content %}
+
+<main class="form-signin w-75 m-auto">
+    <form method="post" enctype="multipart/form-data">
+        <h1 class="h3 mb-3 fw-normal">Update Post</h1>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="titleInput" name="title" placeholder="some title" value="{{ article.title }}">
+            <label for="titleInput">Title</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="introInput" name="intro" placeholder="some intro" value="{{ article.intro }}">
+            <label for="introInput">Intro</label>
+        </div>
+        <div class="form-floating mb-3">
+            <textarea class="form-control" id="contentInput" name="content" placeholder="some content">{{ article.content }}</textarea>
+            <label for="contentInput">Content</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="file" class="form-control" id="imageInput" name="file" accept="image/*">
+            <label for="imageInput">Choose picture</label>
+        </div>
+
+        <button class="btn btn-primary w-100 py-2 mb-3" type="submit">Update</button>
+    </form>
+</main>
+
+{% endblock %}
