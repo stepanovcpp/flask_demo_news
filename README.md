@@ -3,6 +3,16 @@ A functional, minimal news blog built with the **Python Flask** framework. This 
 
 ---
 
+## ⚠️ Security Disclaimer (Demo Environment)
+
+**ATTENTION:** This repository is intended strictly for **demonstration and portfolio purposes**.
+
+For ease of setup and functionality showcase, the SQLite database files (`*.db`) and/or basic configuration containing Flask's **Secret Keys** may be deliberately included in the repository.
+
+**DO NOT** use this approach in any production or live environment. In a real-world application, database files and secret keys **must** be excluded via `.gitignore` and stored securely using environment variables.
+
+---
+
 ## 🔑 Test Credentials (Journalist Access)
 
 For demonstration purposes, you can log in as a journalist (author) using the following credentials to test the post creation, update, and delete functionality.
@@ -63,13 +73,3 @@ You must have Python 3 installed.
     ```
 
 5.  Open your browser and navigate to `http://127.0.0.1:5000/`.
-
----
-
-## ⚠️ Security Disclaimer (Demo Environment)
-
-**ATTENTION:** This repository is intended strictly for **demonstration and portfolio purposes**.
-
-For ease of setup and functionality showcase, the SQLite database files (`*.db`) and/or basic configuration containing Flask's **Secret Keys** may be deliberately included in the repository.
-
-**DO NOT** use this approach in any production or live environment. In a real-world application, database files and secret keys **must** be excluded via `.gitignore` and stored securely using environment variables.
