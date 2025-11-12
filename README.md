@@ -3,6 +3,18 @@ A functional, minimal news blog built with the **Python Flask** framework. This 
 
 ---
 
+## 🔑 Test Credentials (Journalist Access)
+
+For demonstration purposes, you can log in as a journalist (author) using the following credentials to test the post creation, update, and delete functionality.
+
+| Role | Login (Email) | Password |
+| :--- | :--- | :--- |
+| Journalist | `rudeusgreyrat@gmail.com` | `password` |
+| Journalist | `erisboreasgreyrat@gmail.com` | `password` |
+| Journalist | `ghislainededoldia@gmail.com` | `password` |
+
+---
+
 ## 🚀 Key Features and Skills Demonstrated
 
 * **Full CRUD Functionality:** Implements the complete Create, Read, Update, and Delete cycle for user-generated articles using RESTful routing.
